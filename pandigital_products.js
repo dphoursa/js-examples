@@ -13,17 +13,7 @@
  *
  */
 
-function is_pandigital(n) {
-    var digits = (n).split("");
-    digits.sort();
-    for (var c = 0; c < digits.length; c++ ) {
-        if (digits[c] != c + 1) {
-            return false;
-        }
-    }
-    
-    return true;
-}
+var helper = require("./helpers.js");
 
 var unique = [];
 var answer = 0;
@@ -31,7 +21,7 @@ for (var a = 1; a < 2000; a++) {
     for (var b = 1; b < 50; b++) {
         var i = a * b;
         
-        if (("" + i + a + b).length == 9 && is_pandigital("" + i + a + b) && unique.indexOf(i) == -1) {
+        if (("" + i + a + b).length == 9 && helper.is_pandigital("" + i + a + b) && unique.indexOf(i) == -1) {
             unique.push(i);
             answer += i;
         }
