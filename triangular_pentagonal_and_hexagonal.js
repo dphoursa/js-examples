@@ -17,6 +17,7 @@
  */
 
 /*
+//Initial solution
 for (var t = 286; t < 100000; t++) {
     var tri = t * (t + 1) / 2;
     for (var p = 165; p < 100000; p++) {
@@ -33,21 +34,48 @@ for (var t = 286; t < 100000; t++) {
 }
 */
 
+//Refactored solution
 
+/**
+ * Calculate Tn=n(n+1)/2
+ *
+ * @param int n
+ * @return int
+ * 
+ */
 function T(n) {
     return n * (n + 1) / 2;
 }
 
+/**
+ * Calculate Pn=n(3n-1)/2
+ *
+ * @param int n
+ * @return int
+ * 
+ */
 function P(n) {
     return n * (3 * n - 1) / 2;
 }
 
+/**
+ * Calculate Hn=n(2n-1)
+ *
+ * @param int n
+ * @return int
+ * 
+ */
 function H(n) {
     return n * (2 * n - 1);
 }
 
+/** @type int Answer to the puzzle */
 var answer = 0;
+
+/** @type Array stores seen solutions */
 var storage = [];
+
+// loop through solutions for all n's below 100000 and above T(285) = P(165) = H(143)
 for (var n = 165; n < 100000; n++) {
     var tmp = [P(n)];
     if (n > 285) {
