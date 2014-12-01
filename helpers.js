@@ -1,3 +1,9 @@
+/**
+ * Check if a number is pandigital, i.e contains only 1 to 9 digits 
+ * 
+ * @param int n Number to check
+ * @return boolean true if is pandigital and false if not
+ */
 var is_pandigital = function(n) {
     var digits = (n).split("");
     digits.sort();
@@ -10,4 +16,5 @@ var is_pandigital = function(n) {
     return true;
 }
 
+//make is_pandigital function exportable
 module.exports.is_pandigital = is_pandigital;
