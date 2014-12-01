@@ -13,10 +13,15 @@
  *
  */
 
+// import helper functions that are common between different problems 
 var helper = require("./helpers.js");
 
+/** @type Array holds all unique products whose multiplicand/multiplier/product identity can be written as a 1 through 9 pandigital */
 var unique = [];
+
+/** @type int */
 var answer = 0;
+
 for (var a = 1; a < 2000; a++) {
     for (var b = 1; b < 50; b++) {
         var i = a * b;

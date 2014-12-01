@@ -16,16 +16,20 @@
 // P = a + b + c
 // P = a + b + sqrt(a^2 + b^2)
 
+/** @type array storage for seen perimeters */ 
 var answers = [];
 
+/** @type int most number of ways to make a perimeter that is <= 1000 */
 var answer = 0;
+
+/** @type int perimeter that can be name in most number of ways */
 var answer_p = 0;
 
 for (var a = 1; a < 500; a++) {
     for (var b = 1; b < 500; b++) {
         var p = a + b + Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
         if (p <= 1000) {
-            if (typeof(answers[p]) == "undefined") {
+            if (typeof(answers[p]) == undefined) {
                 answers[p] = 0;
             }
             

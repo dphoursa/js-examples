@@ -18,9 +18,12 @@
  *
  */
 
+// import helper functions that are common between different problems 
 var helper = require("./helpers.js");
 
+/** @type int largest possible pandigital */
 var answer = 0;
+
 for (var i = 1; i < 10000; i++) {
     var string = "" + i;
     for (var n = 2; n < 10 && string.length < 9; n++ ) {
